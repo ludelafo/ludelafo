@@ -1,0 +1,28 @@
+## Hugo
+
+# Generated files by Hugo
+/public/
+/resources/_gen/
+/assets/jsconfig.json
+hugo_stats.json
+
+# Temporary lock file while building
+/.hugo_build.lock
+
+## Linux
+
+# Temporary files
+*~
+
+## macOS
+
+# Files created by macOS Finder
+.DS_Store
+
+## Windows
+
+# Windows thumbnail cache files
+Thumbs.db
+
+# Folder config file
+[Dd]esktop.ini

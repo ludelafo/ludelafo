@@ -1,0 +1,9 @@
+services:
+    hugo:
+        image: hugomods/hugo:${HUGO_IMAGE_VERSION:-latest}
+        command: hugo server --bind 0.0.0.0 --buildDrafts
+        user: ${UID:-1000}:${GID:-1000}
+        ports:
+            - 1313:1313
+        volumes:
+            - ${PWD}:/src
