@@ -1,0 +1,10 @@
+baseURL: https://ludelafo.ch/
+languageCode: en-us
+title: Ludovic Delafontaine
+markup:
+  highlight:
+    anchorLineNos: true
+    lineNos: true
+    lineNumbersInTable: true
+    noClasses: false
+    tabWidth: 2
