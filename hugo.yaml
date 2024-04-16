@@ -8,3 +8,7 @@ markup:
     lineNumbersInTable: true
     noClasses: false
     tabWidth: 2
+  tableOfContents:
+    endLevel: 3
+    ordered: false
+    startLevel: 2

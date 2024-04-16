@@ -6,3 +6,11 @@ weight: 1102
 ---
 
 This is the CV page.
+
+# This is a title
+
+[Text](https://www.gohugo.io "Title")
+
+[Text](/hobbies "Title")
+
+![Text](https://gohugo.io/images/hugo-logo-wide.svg "Title")

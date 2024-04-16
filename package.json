@@ -1,0 +1,23 @@
+{
+  "name": "ludelafo",
+  "version": "0.0.1",
+  "description": "Hi!",
+  "license": "CC-BY-SA-4.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ludelafo/ludelafo.git"
+  },
+  "author": "Ludovic Delafontaine",
+  "bugs": {
+    "url": "https://github.com/ludelafo/ludelafo/issues"
+  },
+  "homepage": "https://github.com/ludelafo/ludelafo#readme",
+  "scripts": {
+    "format:check": "prettier --check \"**/*.{html,md,js}\" --ignore-path .gitignore --ignore-path .prettierignore",
+    "format": "prettier --write \"**/*.{html,md,js}\" --ignore-path .gitignore --ignore-path .prettierignore"
+  },
+  "devDependencies": {
+    "prettier": "^3.2.5",
+    "prettier-plugin-go-template": "^0.0.15"
+  }
+}

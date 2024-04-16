@@ -15,6 +15,11 @@ hugo.darwin
 hugo.linux
 hugo
 
+## Node.js
+
+# Dependency directories
+node_modules/
+
 ## Linux
 
 # Temporary files

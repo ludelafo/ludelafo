@@ -12,4 +12,4 @@ cascade:
         parent: hobbies
 ---
 
-Some of my hobbies. 
+Some of my hobbies.
