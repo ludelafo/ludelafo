@@ -1,0 +1,21 @@
+{{ define "main" }}
+	<h1>{{ .Title }}</h1>
+	{{ .Content }}
+	{{ range .Pages }}
+		<h2>
+			<a href="{{ .RelPermalink }}">
+				{{ .Params.artist }} - {{ .Params.album }} ({{ .Params.year }})
+			</a>
+		</h2>
+		{{ with .Resources.GetMatch "cover.jpg" }}
+			{{ $filter := images.Process "resize 600x Linear webp picture" }}
+			{{ with . | images.Filter $filter }}
+				<img
+					src="{{ .RelPermalink }}"
+					width="{{ .Width }}"
+					height="{{ .Height }}"
+				/>
+			{{ end }}
+		{{ end }}
+	{{ end }}
+{{ end }}

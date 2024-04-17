@@ -27,7 +27,7 @@ h2 {
 .noise:before {
 	content: "";
 	position: absolute;
-	animation: noise 1s steps(10) both infinite;
+	animation: noise 1s steps(5) both infinite;
 	will-change: auto;
 	background-image: url(/svg/noise-light.svg);
 	background-size: contain;
@@ -35,14 +35,14 @@ h2 {
 	height: 200%;
 	left: -50%;
 	top: -50%;
-	opacity: 0.9;
+	opacity: 0.4;
 }
 
 @keyframes noise {
-	0% {
-		transform: translate(-3%, 7%);
+	from {
+		transform: translate(-10%, 0%);
 	}
-	10% {
+	/* 10% {
 		transform: translate(5%, -9%);
 	}
 	20% {
@@ -68,9 +68,9 @@ h2 {
 	}
 	90% {
 		transform: translate(-10%, 6%);
-	}
-	100% {
-		transform: translate(0, 8%);
+	} */
+	to {
+		transform: translate(10%, 0%);
 	}
 }
 
@@ -81,7 +81,7 @@ h2 {
 	}
 
 	.noise:before {
-		opacity: 0.5;
+		opacity: 0.1;
 		background-image: url(/svg/noise-dark.svg);
 	}
 }

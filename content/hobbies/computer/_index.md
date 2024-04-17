@@ -1,6 +1,5 @@
 ---
-title: Computer projects
-weight: 1201
+title: Computer
 ---
 
 Some of the computer projects I've worked on.

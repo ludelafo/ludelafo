@@ -1,6 +1,8 @@
 baseURL: https://ludelafo.ch/
 languageCode: en-us
 title: Ludovic Delafontaine
+
+## https://gohugo.io/getting-started/configuration-markup/
 markup:
   highlight:
     anchorLineNos: true
@@ -8,7 +10,88 @@ markup:
     lineNumbersInTable: true
     noClasses: false
     tabWidth: 2
+
   tableOfContents:
     endLevel: 3
     ordered: false
     startLevel: 2
+
+## https://gohugo.io/content-management/menus/
+# The levels are based on Johnny.Decimal - https://johnnydecimal.com/
+menus:
+  main:
+    # About
+    - identifier: about
+      pageRef: /about
+      weight: 11
+
+    # Hobbies
+    - identifier: hobbies
+      pageRef: /hobbies
+      weight: 12
+    - identifier: computer
+      parent: hobbies
+      pageRef: /hobbies/computer
+      weight: 1201
+    - identifier: photography
+      parent: hobbies
+      pageRef: /hobbies/photography
+      weight: 1202
+    - identifier: hiking
+      parent: hobbies
+      pageRef: /hobbies/hiking
+      weight: 1203
+
+    # Interests
+    - identifier: interests
+      pageRef: /interests
+      weight: 13
+    - identifier: music
+      parent: interests
+      pageRef: /interests/music
+      weight: 1301
+    - identifier: tv-shows
+      parent: interests
+      pageRef: /interests/tv-shows
+      weight: 1302
+    - identifier: movies
+      parent: interests
+      pageRef: /interests/movies
+      weight: 1303
+    - identifier: books
+      parent: interests
+      pageRef: /interests/books
+      weight: 1304
+    - identifier: comics
+      parent: interests
+      pageRef: /interests/comics
+      weight: 1305
+    - identifier: bandes-dessinees
+      parent: interests
+      pageRef: /interests/bandes-dessinees
+      weight: 1306
+    - identifier: manga
+      parent: interests
+      pageRef: /interests/manga
+      weight: 1307
+    - identifier: video-games
+      parent: interests
+      pageRef: /interests/video-games
+      weight: 1308
+
+    # Misc
+    - identifier: misc
+      pageRef: /misc
+      weight: 14
+    - identifier: blog
+      parent: misc
+      pageRef: /misc/blog
+      weight: 1401
+    - identifier: tools
+      parent: misc
+      pageRef: /misc/tools
+      weight: 1402
+    - identifier: quotes
+      parent: misc
+      pageRef: /misc/quotes
+      weight: 1403

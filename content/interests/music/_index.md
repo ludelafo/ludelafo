@@ -1,9 +1,9 @@
 ---
 title: Music
-weight: 1301
-type: music
+
+type: interests/music
 cascade:
-  type: music
+  type: interests/music
 ---
 
 Some of my favorite music.
