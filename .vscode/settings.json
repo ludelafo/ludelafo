@@ -24,5 +24,9 @@
 	"editor.formatOnPaste": true,
 	"editor.formatOnSave": true,
 	"editor.renderWhitespace": "all",
+	"files.associations": {
+		"*.xml": "html",
+		"*.svg": "html"
+	},
 	"files.insertFinalNewline": true
 }
