@@ -4,3 +4,13 @@ draft: false
 ---
 
 Welcome to my personal website.
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+  fmt.Println("Hello, World!")
+}
+```

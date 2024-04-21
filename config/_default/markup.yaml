@@ -1,0 +1,13 @@
+## Markup - https://gohugo.io/getting-started/configuration-markup/
+
+highlight:
+  anchorLineNos: true
+  lineNos: true
+  lineNumbersInTable: true
+  noClasses: false
+  tabWidth: 2
+
+tableOfContents:
+  endLevel: 3
+  ordered: false
+  startLevel: 2

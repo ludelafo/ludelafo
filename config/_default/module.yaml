@@ -1,0 +1,11 @@
+## Modules https://gohugo.io/hugo-modules/configuration/
+# https://github.com/bep/hugo-starter-tailwind-basic
+
+hugoVersion:
+  extended: false
+  min: 0.115.1
+mounts:
+  - source: assets
+    target: assets
+  - source: hugo_stats.json
+    target: assets/watching/hugo_stats.json

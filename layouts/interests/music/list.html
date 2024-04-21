@@ -7,15 +7,26 @@
 				{{ .Params.artist }} - {{ .Params.album }} ({{ .Params.year }})
 			</a>
 		</h2>
-		{{ with .Resources.GetMatch "cover.jpg" }}
-			{{ $filter := images.Process "resize 600x Linear webp picture" }}
-			{{ with . | images.Filter $filter }}
-				<img
-					src="{{ .RelPermalink }}"
-					width="{{ .Width }}"
-					height="{{ .Height }}"
-				/>
+		{{ with .File }}
+			{{ $dir := strings.TrimSuffix "/" .Dir }}
+			{{ $filename := .ContentBaseName }}
+			{{ $asset := printf "%s/%s.jpg" $dir $filename }}
+			{{ $asset }}
+			{{/* {{ $dir := strings.TrimSuffix "/" .Dir }}
+			{{ $cover := printf "%s/cover.jpg" $dir }}
+			{{ $cover }} */}}
+			{{/* {{ $filter := images.Process "resize 600x Linear webp picture" }}
+
+			{{ with resources.Get $cover }}
+				{{ with . | images.Filter $filter }}
+					<img
+						src="{{ .RelPermalink }}"
+						width="{{ .Width }}"
+						height="{{ .Height }}"
+					/>
+				{{ end }}
 			{{ end }}
+			*/}}
 		{{ end }}
 	{{ end }}
 {{ end }}

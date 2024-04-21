@@ -1,22 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap");
-/* @import url('https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css'); */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-body {
-	font-family: "EB Garamond", serif;
-	font-size: 1rem;
-	text-align: justify;
-	color: #121212;
-	background: #e9e8e3;
-}
-
-h1 {
-	font-size: 2.5rem;
-}
-
-h2 {
-	font-size: 1.5rem;
-}
-
+/*
 .noise {
 	position: fixed;
 	z-index: -99999;
@@ -27,7 +13,7 @@ h2 {
 .noise:before {
 	content: "";
 	position: absolute;
-	animation: noise 1s steps(5) both infinite;
+	animation: noise 1s steps(8) both infinite;
 	will-change: auto;
 	background-image: url(/svg/noise-light.svg);
 	background-size: contain;
@@ -42,46 +28,15 @@ h2 {
 	from {
 		transform: translate(-10%, 0%);
 	}
-	/* 10% {
-		transform: translate(5%, -9%);
-	}
-	20% {
-		transform: translate(-8%, 4%);
-	}
-	30% {
-		transform: translate(2%, -6%);
-	}
-	40% {
-		transform: translate(9%, 3%);
-	}
-	50% {
-		transform: translate(-6%, 5%);
-	}
-	60% {
-		transform: translate(1%, -4%);
-	}
-	70% {
-		transform: translate(-4%, 8%);
-	}
-	80% {
-		transform: translate(7%, -2%);
-	}
-	90% {
-		transform: translate(-10%, 6%);
-	} */
+
 	to {
 		transform: translate(10%, 0%);
 	}
 }
 
 @media screen and (prefers-color-scheme: dark) {
-	body {
-		color: #ffffff;
-		background: #080808;
-	}
-
 	.noise:before {
-		opacity: 0.1;
+		opacity: 0.4;
 		background-image: url(/svg/noise-dark.svg);
 	}
-}
+} */

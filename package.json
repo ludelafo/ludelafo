@@ -17,7 +17,13 @@
     "format": "prettier --write \"**/*.{html,md,js}\" --ignore-path .gitignore --ignore-path .prettierignore"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.12",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "postcss-cli": "^11.0.0",
     "prettier": "^3.2.5",
-    "prettier-plugin-go-template": "^0.0.15"
+    "prettier-plugin-go-template": "^0.0.15",
+    "prettier-plugin-tailwindcss": "^0.5.14",
+    "tailwindcss": "^3.4.3"
   }
 }

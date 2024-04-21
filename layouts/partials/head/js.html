@@ -1,7 +1,7 @@
 {{- with resources.Get "js/main.js" }}
 	{{- if eq hugo.Environment "development" }}
 		{{- with . | js.Build }}
-			<script src="{{ .RelPermalink }}"></script>
+			<script src="{{ .RelPermalink }}" defer></script>
 		{{- end }}
 	{{- else }}
 		{{- $opts := dict "minify" true }}
@@ -10,7 +10,14 @@
 				src="{{ .RelPermalink }}"
 				integrity="{{- .Data.Integrity }}"
 				crossorigin="anonymous"
+				defer
 			></script>
 		{{- end }}
 	{{- end }}
 {{- end }}
+
+
+<script
+	src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.9/dist/cdn.min.js"
+	defer
+></script>

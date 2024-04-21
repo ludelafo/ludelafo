@@ -3,19 +3,25 @@
 	lang="{{ or site.Language.LanguageCode site.Language.Lang }}"
 	dir="{{ or site.Language.LanguageDirection `ltr` }}"
 >
-	<div class="noise"></div>
 	<head>
-		{{ partial "head.html" . }}
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>
+			{{ if .IsHome }}
+				{{ site.Title }}
+			{{ else }}
+				{{ printf "%s | %s" .Title site.Title }}
+			{{ end }}
+		</title>
+		{{ partialCached "head/css.html" . }}
+		{{ partialCached "head/js.html" . }}
 	</head>
-	<body>
-		<header>
-			{{ partial "header.html" . }}
-		</header>
-		<main>
+	{{/* <div class="animate-noise noise"></div> */}}
+	<body class="bg-gray-50 text-slate-900 dark:bg-gray-900 dark:text-slate-50">
+		{{ partial "header.html" . }}
+		<main class="container prose dark:prose-invert">
 			{{ block "main" . }}{{ end }}
 		</main>
-		<footer>
-			{{ partial "footer.html" . }}
-		</footer>
+		{{ partial "footer.html" . }}
 	</body>
 </html>
