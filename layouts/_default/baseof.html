@@ -17,9 +17,11 @@
 		{{ partialCached "head/js.html" . }}
 	</head>
 	{{/* <div class="animate-noise noise"></div> */}}
-	<body class="bg-gray-50 text-slate-900 dark:bg-gray-900 dark:text-slate-50">
+	<body
+		class="flex min-h-screen flex-col bg-gray-50 text-slate-900 dark:bg-gray-900 dark:text-slate-50"
+	>
 		{{ partial "header.html" . }}
-		<main class="container prose dark:prose-invert">
+		<main class="container prose grow p-4 dark:prose-invert">
 			{{ block "main" . }}{{ end }}
 		</main>
 		{{ partial "footer.html" . }}
