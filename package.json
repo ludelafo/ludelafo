@@ -1,29 +1,29 @@
 {
-  "name": "ludelafo",
-  "version": "0.0.1",
-  "description": "Hi!",
-  "license": "CC-BY-SA-4.0",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ludelafo/ludelafo.git"
-  },
-  "author": "Ludovic Delafontaine",
-  "bugs": {
-    "url": "https://github.com/ludelafo/ludelafo/issues"
-  },
-  "homepage": "https://github.com/ludelafo/ludelafo#readme",
-  "scripts": {
-    "format:check": "prettier --check \"**/*.{html,md,js}\" --ignore-path .gitignore --ignore-path .prettierignore",
-    "format": "prettier --write \"**/*.{html,md,js}\" --ignore-path .gitignore --ignore-path .prettierignore"
-  },
-  "devDependencies": {
-    "@tailwindcss/typography": "^0.5.12",
-    "autoprefixer": "^10.4.19",
-    "postcss": "^8.4.38",
-    "postcss-cli": "^11.0.0",
-    "prettier": "^3.2.5",
-    "prettier-plugin-go-template": "^0.0.15",
-    "prettier-plugin-tailwindcss": "^0.5.14",
-    "tailwindcss": "^3.4.3"
-  }
+	"name": "ludelafo",
+	"version": "0.0.1",
+	"description": "Hi!",
+	"license": "CC-BY-SA-4.0",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ludelafo/ludelafo.git"
+	},
+	"author": "Ludovic Delafontaine",
+	"bugs": {
+		"url": "https://github.com/ludelafo/ludelafo/issues"
+	},
+	"homepage": "https://github.com/ludelafo/ludelafo#readme",
+	"scripts": {
+		"format:check": "prettier --check \"**/*.{html,md,js}\" --ignore-path .gitignore --ignore-path .prettierignore",
+		"format": "prettier --write \"**/*.{html,md,js}\" --ignore-path .gitignore --ignore-path .prettierignore"
+	},
+	"devDependencies": {
+		"@tailwindcss/typography": "^0.5.12",
+		"autoprefixer": "^10.4.19",
+		"postcss": "^8.4.38",
+		"postcss-cli": "^11.0.0",
+		"prettier": "^3.2.5",
+		"prettier-plugin-go-template": "^0.0.15",
+		"prettier-plugin-tailwindcss": "^0.6.5",
+		"tailwindcss": "^3.4.3"
+	}
 }

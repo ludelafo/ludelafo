@@ -1,7 +1,28 @@
-{{ define "main" }}
-	{{ .Content }}
-	<!-- {{ range site.RegularPages }}
-		<h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-		{{ .Summary }}
-	{{ end }} -->
-{{ end }}
+<!doctype html>
+<html
+	lang="{{ or site.Language.LanguageCode site.Language.Lang }}"
+	dir="{{ or site.Language.LanguageDirection `ltr` }}"
+>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>
+			{{ if .IsHome }}
+				{{ site.Title }}
+			{{ else }}
+				{{ printf "%s | %s" .Title site.Title }}
+			{{ end }}
+		</title>
+		{{ partialCached "head/css.html" . }}
+		{{ partialCached "head/js.html" . }}
+	</head>
+	<div class="noise animate-noise"></div>
+	<body
+		class="flex min-h-screen items-center justify-center bg-gray-50 font-serif text-slate-900"
+	>
+		<main class="container prose content-center items-center p-4 text-center">
+			<h1>Ludovic Delafontaine</h1>
+			<p>Welcome to my personal website.</p>
+		</main>
+	</body>
+</html>

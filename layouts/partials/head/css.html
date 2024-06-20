@@ -14,33 +14,15 @@
 		{{- end }}
 	{{- end }}
 {{- end }}
+<link
+	rel="stylesheet"
+	type="text/css"
+	href="https://cdn.jsdelivr.net/gh/aaaakshat/cm-web-fonts@latest/fonts.css"
+/>
 
-{{- with resources.Get "css/syntax-highlighter-monokailight.css" }}
-	{{- if eq hugo.Environment "development" }}
-		<link rel="stylesheet" href="{{ .RelPermalink }}" />
-	{{- else }}
-		{{- with . | minify | fingerprint }}
-			<link
-				rel="stylesheet"
-				href="{{ .RelPermalink }}"
-				integrity="{{ .Data.Integrity }}"
-				crossorigin="anonymous"
-			/>
-		{{- end }}
-	{{- end }}
-{{- end }}
-
-{{- with resources.Get "css/syntax-highlighter-monokai.css" }}
-	{{- if eq hugo.Environment "development" }}
-		<link rel="stylesheet" href="{{ .RelPermalink }}" />
-	{{- else }}
-		{{- with . | minify | fingerprint }}
-			<link
-				rel="stylesheet"
-				href="{{ .RelPermalink }}"
-				integrity="{{ .Data.Integrity }}"
-				crossorigin="anonymous"
-			/>
-		{{- end }}
-	{{- end }}
-{{- end }}
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+	href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
+	rel="stylesheet"
+/>

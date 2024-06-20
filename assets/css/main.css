@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
 .noise {
 	position: fixed;
 	z-index: -99999;
@@ -15,7 +14,7 @@
 	position: absolute;
 	animation: noise 1s steps(8) both infinite;
 	will-change: auto;
-	background-image: url(/svg/noise-light.svg);
+	background-image: url(/svg/noise.svg);
 	background-size: contain;
 	width: 200%;
 	height: 200%;
@@ -33,10 +32,3 @@
 		transform: translate(10%, 0%);
 	}
 }
-
-@media screen and (prefers-color-scheme: dark) {
-	.noise:before {
-		opacity: 0.4;
-		background-image: url(/svg/noise-dark.svg);
-	}
-} */

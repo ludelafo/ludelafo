@@ -2,8 +2,8 @@
 # https://github.com/bep/hugo-starter-tailwind-basic
 
 hugoVersion:
-  extended: false
-  min: 0.115.1
+  extended: true
+  min: 0.120.4
 mounts:
   - source: assets
     target: assets

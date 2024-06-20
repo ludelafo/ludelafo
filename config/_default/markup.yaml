@@ -3,9 +3,9 @@
 highlight:
   anchorLineNos: true
   lineNos: true
-  lineNumbersInTable: true
-  noClasses: false
+  lineNumbersInTable: false
   tabWidth: 2
+  style: rose-pine-dawn
 
 tableOfContents:
   endLevel: 3
