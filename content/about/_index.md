@@ -1,5 +1,9 @@
 ---
-title: About
+title: 11. About
+
+main:
+  identifier: about
+  weight: 11
 
 cascade:
   - _target:
@@ -9,4 +13,4 @@ cascade:
         parent: about
 ---
 
-Information about me.
+A few words about me.

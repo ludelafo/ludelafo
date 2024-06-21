@@ -1,4 +1,5 @@
 baseURL: https://ludelafo.ch/
 languageCode: en-us
-title: Ludovic Delafontaine
+title: ludelafo.ch
 enableEmoji: true
+sectionPagesMenu: main

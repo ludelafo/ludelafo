@@ -17,11 +17,14 @@
 		{{ partialCached "head/js.html" . }}
 	</head>
 	<div class="noise animate-noise"></div>
-	<body class="flex min-h-screen flex-col bg-gray-50 text-slate-900">
-		{{ partial "header.html" . }}
-		<main class="container prose-xl  prose-stone grow p-4">
-			{{ block "main" . }}{{ end }}
-		</main>
-		{{ partial "footer.html" . }}
+	<body class="flex min-h-screen flex-col bg-gray-50 font-serif text-slate-900">
+		{{ block "body" . }}
+			<main class="container prose grow">
+				{{ block "main" . }}{{ end }}
+			</main>
+			{{ if not .IsHome }}
+				{{ partial "footer.html" . }}
+			{{ end }}
+		{{ end }}
 	</body>
 </html>

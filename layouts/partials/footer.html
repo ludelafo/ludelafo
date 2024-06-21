@@ -1,9 +1,15 @@
-<footer class="border-t border-indigo-500 bg-gray-50 text-slate-950">
-	<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-		<div class="flex  h-16 items-center justify-center">
-			<div class="flex flex-shrink-0">
-				<p>Copyright {{ now.Year }}. All rights reserved.</p>
-			</div>
-		</div>
+<footer class="border-t border-indigo-500 text-slate-950">
+	<div class="h-16 p-2">
+		{{- range $index, $value := .Ancestors.Reverse }}
+			{{ if not .IsHome }}
+				<a href="{{ .RelPermalink }}" class="py-1">{{ .Name }}</a>
+			{{- else }}
+				<a href="{{ .RelPermalink }}" class="py-1">Home</a>
+			{{- end }}
+			>
+		{{- end }}
+
+
+		<a href="{{ .Page.Permalink }}" class="py-1">{{ .Page.Name }}</a>
 	</div>
 </footer>

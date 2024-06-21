@@ -1,5 +1,7 @@
 ---
-title: Movies
+title: 13.03 Movies
+summary: Some of my favorite movies.
+weight: 1303
 ---
 
 Some of my favorite movies.

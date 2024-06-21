@@ -1,8 +1,5 @@
 ---
-date: 2024-02-10T06:35:00-02:00
-draft: false
+title: Ludovic Delafontaine
 ---
-
-Ludovic Delafontaine
 
 Welcome to my personal website.
