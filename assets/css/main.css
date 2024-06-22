@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -16,11 +18,11 @@
 	will-change: auto;
 	background-image: url(/svg/noise.svg);
 	background-size: contain;
-	width: 200%;
-	height: 200%;
-	left: -50%;
-	top: -50%;
-	opacity: 0.6;
+	width: 200rem;
+	height: 200rem;
+	left: -50rem;
+	top: -50rem;
+	opacity: 0.3;
 }
 
 @keyframes noise {

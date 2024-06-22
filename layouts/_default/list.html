@@ -9,13 +9,13 @@
 	{{ range .Pages }}
 		<ul>
 			<li>
-				<a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a> -
+				<a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a> &ndash;
 				{{ .Summary }}
 			</li>
 		</ul>
 	{{ else }}
 		<p class="text-center italic">
-			No content found in this section. Please check back later.
+			No content found in this section (yet). Please check back later!
 		</p>
 	{{ end }}
 {{ end }}

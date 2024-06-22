@@ -1,13 +1,30 @@
-<header class="border-t border-indigo-500 text-slate-950">
-	<div class="h-16 p-2">
-		{{- range $index, $value := .Ancestors.Reverse }}
-			{{ if not .IsHome }}
-				<a href="{{ .RelPermalink }}" class="py-1">{{ .Name }}</a>
-			{{- else }}
-				<a href="{{ .RelPermalink }}" class="py-1">Home</a>
+<header
+	class="fixed bottom-0 left-0 right-0 flex h-10 items-center justify-between gap-x-3 border-t border-slate-300 bg-gray-50 px-6 text-sm"
+>
+	<nav class="w-full max-w-xs overflow-hidden">
+		<p class="overflow-x-auto text-ellipsis whitespace-nowrap">
+			{{- range $index, $value := .Ancestors.Reverse }}
+				{{ if not .IsHome }}
+					<a href="{{ .RelPermalink }}" class="underline">{{ .Name }}</a>
+				{{- else }}
+					<a href="{{ .RelPermalink }}" class="underline">Home</a>
+				{{- end }}
+				&gt;
 			{{- end }}
+			<a href="{{ .Page.Permalink }}" class="underline">{{ .Page.Name }}</a>
+		</p>
+	</nav>
+	<div>
+		<p class="flex items-center whitespace-nowrap">
+			&copy;
+			<a
+				href="https://creativecommons.org/licenses/by-sa/4.0/"
+				target="_blank"
+				rel="license"
+				class="ml-1 underline"
 			>
-		{{- end }}
-		<a href="{{ .Page.Permalink }}" class="py-1">{{ .Page.Name }}</a>
+				CC BY-SA 4.0
+			</a>
+		</p>
 	</div>
 </header>
