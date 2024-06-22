@@ -1,5 +1,6 @@
 ---
 title: 12. Hobbies
+summary: Some of my hobbies.
 
 main:
   identifier: hobbies
@@ -12,5 +13,3 @@ cascade:
       main:
         parent: hobbies
 ---
-
-Some of my hobbies.

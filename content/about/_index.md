@@ -1,5 +1,6 @@
 ---
 title: 11. About
+summary: More about me.
 
 main:
   identifier: about
@@ -12,5 +13,3 @@ cascade:
       main:
         parent: about
 ---
-
-A few words about me.

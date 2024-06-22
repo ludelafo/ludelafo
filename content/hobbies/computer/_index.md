@@ -1,7 +1,5 @@
 ---
 title: 12.01 Computer
-summary: Some computer projects I'm working on.
+summary: Some of the computer projects I've worked on.
 weight: 1201
 ---
-
-Some of the computer projects I've worked on.

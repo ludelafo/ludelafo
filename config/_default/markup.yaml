@@ -8,6 +8,6 @@ highlight:
   style: rose-pine-dawn
 
 tableOfContents:
+  startLevel: 1
   endLevel: 3
   ordered: false
-  startLevel: 2

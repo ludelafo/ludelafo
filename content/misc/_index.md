@@ -1,5 +1,6 @@
 ---
 title: 14. Misc
+summary: Miscellaneous content.
 
 main:
   identifier: misc

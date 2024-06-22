@@ -1,5 +1,6 @@
 ---
 title: 13. Interests
+summary: Some of my interests.
 
 main:
   identifier: interests

@@ -14,7 +14,7 @@
 			{{ .Content }}
 		</div>
 		<div>
-			{{ range $index, $value :=  site.Menus.main }}
+			{{ range $index, $value := site.Menus.main }}
 				{{ if $index }}·{{ end }}
 				<a href="{{ .URL }}" class="no-underline">
 					{{ .Name }}

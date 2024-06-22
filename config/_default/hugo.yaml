@@ -3,3 +3,14 @@ languageCode: en-us
 title: ludelafo.ch
 enableEmoji: true
 sectionPagesMenu: main
+enableGitInfo: true
+
+taxonomies:
+  ## Generic
+  tag: tags
+  programming-language: programming-languages
+
+  ## Hobbies
+  # Computer
+
+  #

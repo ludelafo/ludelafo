@@ -13,11 +13,14 @@
 {{- with $page.GetTerms $taxonomy }}
 	{{- $label := (index . 0).Parent.LinkTitle }}
 	<div>
-		<div>{{ $label }}:</div>
-		<ul>
-			{{- range . }}
-				<li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
-			{{- end }}
-		</ul>
+		{{ range $index, $value := . }}
+			{{ if $index }}·{{ end }}
+			<a
+				href="{{ .RelPermalink }}"
+				class="inline-flex items-center rounded-md bg-gray-200 px-2 py-1 text-xs font-medium text-gray-600 no-underline"
+			>
+				{{ .LinkTitle }}
+			</a>
+		{{- end }}
 	</div>
 {{- end }}

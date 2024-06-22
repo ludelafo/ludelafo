@@ -13,13 +13,16 @@
 				{{ printf "%s | %s" .Title site.Title }}
 			{{ end }}
 		</title>
-		{{ partialCached "head/css.html" . }}
-		{{ partialCached "head/js.html" . }}
+		{{ partial "head/css.html" . }}
+		{{ partial "head/js.html" . }}
 	</head>
 	<div class="noise animate-noise"></div>
 	<body class="flex min-h-screen flex-col bg-gray-50 font-serif text-slate-900">
 		{{ block "body" . }}
-			<main class="container prose grow">
+			{{/*  {{ if not .IsHome }}
+				{{ partial "header.html" . }}
+			{{ end }}  */}}
+			<main class="container prose grow p-4">
 				{{ block "main" . }}{{ end }}
 			</main>
 			{{ if not .IsHome }}

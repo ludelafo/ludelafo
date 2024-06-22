@@ -1,17 +1,29 @@
 {{ define "main" }}
-	<main>
-		<article>
-			<header>
-				<h1>{{ .Title }}</h1>
-			</header>
-			{{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
-			{{ $dateHuman := .Date | time.Format ":date_long" }}
-			<time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
-			{{ .Content }}
+	<article class="mt-16 text-justify">
+		<header class="text-center">
+			<h1>{{ .Title }}</h1>
+			{{ with .Summary }}
+				<p class="italic">{{ . }}</p>
+			{{ end }}
+			<p>
+				Created: {{ .Date | time.Format "2006-01-02" }} ·
+				{{ with .GitInfo }}
+					Updated:
+					{{ .CommitDate.Format "2006-01-02" }}
+				{{ end }}
+			</p>
 			{{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
-		</article>
-		<aside>
-			{{ .TableOfContents }}
-		</aside>
-	</main>
+		</header>
+		<hr />
+		{{ with .TableOfContents }}
+			{{ if ne . "<nav id=\"TableOfContents\"></nav>" }}
+				<aside>
+					<h2>Table of contents</h2>
+					{{ . }}
+					<hr />
+				</aside>
+			{{ end }}
+		{{ end }}
+		{{ .Content }}
+	</article>
 {{ end }}

@@ -1,13 +1,21 @@
 {{ define "main" }}
 	<div class="mt-16 text-center">
 		<h1>{{ .Title }}</h1>
+		{{ with .Summary }}
+			<p>{{ . }}</p>
+		{{ end }}
 		{{ .Content }}
 	</div>
 	{{ range .Pages }}
-		<h2>
-			<a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-		</h2>
-		{{ .Summary }}
-		{{ .Weight }}
+		<ul>
+			<li>
+				<a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a> -
+				{{ .Summary }}
+			</li>
+		</ul>
+	{{ else }}
+		<p class="text-center italic">
+			No content found in this section. Please check back later.
+		</p>
 	{{ end }}
 {{ end }}
