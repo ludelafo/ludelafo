@@ -3,21 +3,22 @@
 	<div class="container">
 		<div class="m-8 flex flex-wrap justify-center gap-8">
 			{{ range .Pages.ByTitle.Reverse }}
-				{{/* <a href="{{ .RelPermalink }}" class="no-underline"> */}}
 				<div class="group relative size-72 bg-white p-4 shadow-lg md:size-96">
 					<img
 						class="h-full w-full object-contain group-hover:blur-sm group-hover:brightness-75"
 						src="{{ .Params.cover }}"
+						loading="lazy"
 						alt="{{ .Params.album }} album cover"
 					/>
 					<div
 						class="invisible absolute inset-4 flex flex-col items-center justify-center text-center text-lg uppercase text-white group-hover:visible"
 					>
-						<p>{{ .Params.artist }}</p>
-						<p>{{ .Params.album }} ({{ .Params.year }})</p>
+						<a href="{{ .RelPermalink }}" class="no-underline">
+							<p>{{ .Params.artist }}</p>
+							<p>{{ .Params.album }} ({{ .Params.year }})</p>
+						</a>
 					</div>
 				</div>
-				{{/* </a> */}}
 			{{ end }}
 		</div>
 	</div>
