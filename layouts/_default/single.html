@@ -2,7 +2,7 @@
 	<article class="mt-16 text-justify">
 		<header class="text-center">
 			<h1>{{ .Title }}</h1>
-			{{ with .Summary }}
+			{{ with or (.Params.Subtitle) (.Summary) }}
 				<p class="italic">{{ . }}</p>
 			{{ end }}
 			<p>

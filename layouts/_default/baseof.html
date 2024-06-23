@@ -16,7 +16,6 @@
 		{{ partial "head/css.html" . }}
 		{{ partial "head/js.html" . }}
 	</head>
-	<div class="noise animate-noise"></div>
 	<body
 		class="{{ if not .IsHome }}
 			pb-8
@@ -34,4 +33,5 @@
 			{{ end }}
 		{{ end }}
 	</body>
+	<div class="bg-noise h-full w-full animate-noise"></div>
 </html>

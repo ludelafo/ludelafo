@@ -7,7 +7,7 @@
 				{{ if not .IsHome }}
 					<a href="{{ .RelPermalink }}" class="underline">{{ .Name }}</a>
 				{{- else }}
-					<a href="{{ .RelPermalink }}" class="underline">Home</a>
+					<a href="{{ .RelPermalink }}" class="underline">$HOME</a>
 				{{- end }}
 				&gt;
 			{{- end }}
@@ -18,10 +18,10 @@
 		<p class="flex items-center whitespace-nowrap">
 			&copy;
 			<a
-				href="https://creativecommons.org/licenses/by-sa/4.0/"
+				href="https://github.com/ludelafo/ludelafo/blob/main/LICENSE.md"
 				target="_blank"
 				rel="license"
-				class="ml-1 underline"
+				class="ml-1"
 			>
 				CC BY-SA 4.0
 			</a>
