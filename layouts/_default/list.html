@@ -1,17 +1,19 @@
 {{ define "main" }}
 	<div class="mt-16 text-center">
 		<h1>{{ .Title }}</h1>
-		{{ with or .Summary }}
+		{{ with .Summary }}
 			<p>{{ . }}</p>
 		{{ end }}
 		{{ .Content }}
 	</div>
-	{{ range .Pages }}
+	{{ if .Pages }}
 		<ul>
-			<li>
-				<a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a> &ndash;
-				{{ .Summary }}
-			</li>
+			{{ range .Pages }}
+				<li>
+					<a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a> &ndash;
+					{{ .Summary }}
+				</li>
+			{{ end }}
 		</ul>
 	{{ else }}
 		<p class="text-center italic">

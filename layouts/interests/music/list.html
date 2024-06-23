@@ -1,32 +1,25 @@
-{{ define "main" }}
-	<h1>{{ .Title }}</h1>
-	{{ .Content }}
-	{{ range .Pages }}
-		<h2>
-			<a href="{{ .RelPermalink }}">
-				{{ .Params.artist }} - {{ .Params.album }} ({{ .Params.year }})
-			</a>
-		</h2>
-		{{ with .File }}
-			{{ $dir := strings.TrimSuffix "/" .Dir }}
-			{{ $filename := .ContentBaseName }}
-			{{ $asset := printf "%s/%s.jpg" $dir $filename }}
-			{{ $asset }}
-			{{/* {{ $dir := strings.TrimSuffix "/" .Dir }}
-			{{ $cover := printf "%s/cover.jpg" $dir }}
-			{{ $cover }} */}}
-			{{/* {{ $filter := images.Process "resize 600x Linear webp picture" }}
-
-			{{ with resources.Get $cover }}
-				{{ with . | images.Filter $filter }}
+{{ define "body" }}
+	{{ partial "header.html" . }}
+	<div class="container">
+		<div class="m-8 flex flex-wrap justify-center gap-8">
+			{{ range .Pages.ByTitle.Reverse }}
+				{{/* <a href="{{ .RelPermalink }}" class="no-underline"> */}}
+				<div class="group relative size-72 bg-white p-4 shadow-lg md:size-96">
 					<img
-						src="{{ .RelPermalink }}"
-						width="{{ .Width }}"
-						height="{{ .Height }}"
+						class="h-full w-full object-contain group-hover:blur-sm group-hover:brightness-75"
+						src="{{ .Params.cover }}"
+						alt="{{ .Params.album }} album cover"
 					/>
-				{{ end }}
+					<div
+						class="invisible absolute inset-4 flex flex-col items-center justify-center text-lg uppercase text-white group-hover:visible"
+					>
+						<p>{{ .Params.artist }}</p>
+						<p>{{ .Params.album }} ({{ .Params.year }})</p>
+					</div>
+				</div>
+				{{/* </a> */}}
 			{{ end }}
-			*/}}
-		{{ end }}
-	{{ end }}
+		</div>
+	</div>
+	{{ partial "footer.html" . }}
 {{ end }}

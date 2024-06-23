@@ -20,6 +20,7 @@
 	width: 120vw;
 	height: 100vh;
 	left: -10vw;
+	opacity: 0.9;
 }
 
 @keyframes bg-noise {

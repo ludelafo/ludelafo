@@ -27,7 +27,6 @@ module.exports = {
 						h4: {
 							fontWeight: "400",
 						},
-						// ...
 					},
 				},
 			},
