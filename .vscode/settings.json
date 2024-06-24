@@ -21,6 +21,9 @@
 			"strings": false
 		}
 	},
+	"[typst]": {
+		"editor.defaultFormatter": "nvarner.typst-lsp"
+	},
 	"editor.formatOnPaste": true,
 	"editor.formatOnSave": true,
 	"editor.renderWhitespace": "all",
