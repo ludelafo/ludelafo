@@ -1,6 +1,7 @@
 ---
-title: 12. Hobbies
+title: Hobbies
 summary: Some of my hobbies.
+weight: 12
 
 main:
   identifier: hobbies

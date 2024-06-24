@@ -1,6 +1,7 @@
 ---
-title: 13. Interests
+title: Interests
 summary: Some of my interests.
+weight: 13
 
 main:
   identifier: interests

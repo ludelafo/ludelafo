@@ -1,6 +1,7 @@
 ---
-title: 11. About
+title: About
 summary: More about me.
+weight: 11
 
 main:
   identifier: about

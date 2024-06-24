@@ -1,5 +1,5 @@
 ---
-title: 14.02 Tools
+title: Tools
 summary: Some tools I've found useful.
 weight: 1402
 ---

@@ -6,18 +6,16 @@
 		{{ end }}
 		{{ .Content }}
 	</div>
-	{{ if .Pages }}
-		<ul>
-			{{ range .Pages }}
-				<li>
-					<a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a> &ndash;
-					{{ .Summary }}
-				</li>
-			{{ end }}
-		</ul>
-	{{ else }}
-		<p class="text-center italic">
-			No content found in this section (yet). Please check back later!
-		</p>
-	{{ end }}
+	<div class="text-justify">
+		{{ range .Pages }}
+			<p class="m-1">
+				<a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a> &ndash;
+				{{ .Summary }}
+			</p>
+		{{ else }}
+			<p class="text-center italic">
+				No content found in this section (yet). Please check back later!
+			</p>
+		{{ end }}
+	</div>
 {{ end }}

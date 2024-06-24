@@ -1,5 +1,6 @@
 ---
-title: 2020 - Currents - The Way It Ends
+title: Currents - The Way It Ends (2020)
+date: 2020-06-05
 artist: Currents
 album: The Way It Ends
 year: 2020

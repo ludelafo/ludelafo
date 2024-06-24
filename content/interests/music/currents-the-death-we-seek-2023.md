@@ -1,5 +1,6 @@
 ---
-title: 2023 - Currents - The Death We Seek
+title: Currents - The Death We Seek (2023)
+date: 2023-05-05
 artist: Currents
 album: The Death We Seek
 year: 2023

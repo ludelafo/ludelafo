@@ -1,5 +1,5 @@
 ---
-title: 11.01 About me
+title: About me
 subtitle: Swiss software engineer who cares about simple, yet reliable software.
 summary: Learn more about me.
 date: 1994-09-10T05:00:00-01:00

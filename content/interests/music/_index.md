@@ -1,5 +1,5 @@
 ---
-title: 13.01 Music
+title: Music
 summary: Some of my favorite music.
 weight: 1301
 

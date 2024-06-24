@@ -1,6 +1,7 @@
 ---
-title: 14. Misc
+title: Misc
 summary: Miscellaneous content.
+weight: 14
 
 main:
   identifier: misc

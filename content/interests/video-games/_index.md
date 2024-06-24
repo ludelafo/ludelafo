@@ -1,5 +1,5 @@
 ---
-title: 13.08 Video games
+title: Video Games
 summary: Some of my favorite video games.
 weight: 1308
 ---
