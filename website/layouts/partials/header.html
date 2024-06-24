@@ -1,7 +1,7 @@
 <header
 	class="fixed bottom-0 left-0 right-0 z-50 flex h-10 items-center justify-between gap-x-3 border-t border-slate-300 bg-gray-50 px-6 text-sm"
 >
-	<nav class="w-full max-w-xs overflow-hidden">
+	<nav class="w-full overflow-hidden">
 		<p class="overflow-x-auto text-ellipsis whitespace-nowrap">
 			{{- range $index, $value := .Ancestors.Reverse }}
 				{{ if not .IsHome }}
