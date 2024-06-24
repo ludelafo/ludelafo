@@ -1,0 +1,117 @@
+name: Deploy to GitHub Pages
+
+# Controls when the action will run
+on:
+  # Runs on pushes
+  push:
+  # Runs on pull requests
+  pull_request:
+  # Manual run from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "github-pages"
+  cancel-in-progress: false
+
+jobs:
+  # CV
+  build-cv:
+    runs-on: ubuntu-latest
+    container: ghcr.io/typst/typst:v0.11.1
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Compile CV with Typst
+        working-directory: cv
+        run: |
+          typst compile main.typ cv.pdf
+
+      - name: Upload files
+        uses: actions/upload-artifact@v4
+        with:
+          name: typst-files
+          path: |
+            cv/cv.pdf
+          if-no-files-found: error
+          retention-days: 1
+
+  # Website
+  build-website:
+    runs-on: ubuntu-latest
+    container: ghcr.io/hugomods/hugo:0.127.0
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Build website with Hugo
+        env:
+          # For maximum backward compatibility with Hugo modules
+          HUGO_ENVIRONMENT: production
+          HUGO_ENV: production
+        working-directory: website
+        run: |
+          # Set the Git configuration for Hugo
+          git config --global --add safe.directory /__w/${{ github.repository }}
+
+          # Install Node dependencies
+          npm install
+
+          # Build the website
+          hugo --gc --minify
+
+      - name: Upload files
+        uses: actions/upload-artifact@v4
+        with:
+          name: hugo-files
+          path: |
+            website/public
+          if-no-files-found: error
+          retention-days: 1
+
+  merge-files-for-github-pages:
+    runs-on: ubuntu-latest
+    needs: [build-cv, build-website]
+    steps:
+      - name: Download files
+        uses: actions/download-artifact@v4
+        with:
+          pattern: "*-files"
+
+      - name: Merge files
+        run: |
+          # Move the website files to the public directory
+          mv hugo-files public
+
+          # Move the CV file to the correct location
+          mv typst-files/cv.pdf public/about/cv/ludovic-delafontaine-cv.pdf
+
+      - name: Upload files to GitHub Pages
+        # Only run on main
+        if: github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+  # Deployment job
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    needs: merge-files-for-github-pages
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+    environment:
+      name: GitHub Pages
+      url: ${{ steps.deployment.outputs.page_url }}
