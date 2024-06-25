@@ -10,42 +10,32 @@ _A PDF version is available [here](/cv.pdf)._
 
 # Studies
 
-## Haute École d’Ingénierie et de Gestion du canton de Vaud
+## Haute École d’Ingénierie et de Gestion du canton de Vaud (_September 2015 - July 2019_)
 
 Bachelor of Science HES-SO in Computer Science, major in Software Engineering
 
-_September 2015 - July 2019_
+## École Technique – École des Métiers de Lausanne (_August 2011 - June 2015_)
 
-## Federal VET Diploma in Computer Science with integrated Technical Professional Maturity
-
-École Technique – École des Métiers de Lausanne
-
-_August 2011 - June 2015_
+Federal VET Diploma in Computer Science with integrated Technical Professional Maturity
 
 # Work experience
 
-## Artios – A transparent Web development agency
+## Artios – A transparent Web development agency (_December 2022 - Present_)
 
 Co-founder – A company specialized in resilient, tailor made Web applications
 
-_December 2022 - Present_
-
-## Haute École d’Ingénierie et de Gestion du canton de Vaud
+## Haute École d’Ingénierie et de Gestion du canton de Vaud (_July 2020 - March 2024_)
 
 Applied Research and Development Associate & Lecturer
-
-_July 2020 - March 2024_
 
 - Web applications development and deployment
 - Cloud management and automation
 - Teaching Bachelor’s degree courses
 - Supporting students in their Bachelor’s work
 
-## École Polytechnique Fédérale de Lausanne
+## École Polytechnique Fédérale de Lausanne (_February 2014 - February 2015_)
 
 General IT Specialist
-
-_February 2014 - February 2015_
 
 - Support for users (mostly Linux and macOS)
 - Network hardware configuration
@@ -54,15 +44,11 @@ _February 2014 - February 2015_
 
 # Personal projects
 
-## panosse – Manage your FLAC music library
-
-_Personal_
+## panosse – Manage your FLAC music library (_Personal_)
 
 A CLI tool written in Go to clean, encode, normalize, and verify your FLAC music library. [GitHub](https://github.com/ludelafo/panosse)
 
-## BeeScreens – Interactive screens for your events
-
-_Baleinev Festival_
+## BeeScreens – Interactive screens for your events (_Baleinev Festival_)
 
 Collection of interactive applications designed for festive and cultural events since 2018. [GitLab](https://gitlab.com/beescreens)
 
@@ -86,28 +72,12 @@ Collection of interactive applications designed for festive and cultural events 
 
 # Languages
 
-## French
-
-_Mother tongue_
-
-## English
-
-_C1 Advanced certificate_
-
-## Italian
-
-_Excellent oral and written skills_
+- French - _Mother tongue_
+- English - _C1 Advanced certificate_
+- Italian - _Excellent oral and written skills_
 
 # Hobbies
 
-## Music and concerts
-
-_Too many to tell..._ :smile:
-
-## Trekking
-
-_Sleeping in a tent is the best._
-
-## Beers
-
-_Cheers! Thanks for reading!_
+- Music and concerts - _Too many to tell..._ :smile:
+- Trekking - _Sleeping in a tent is the best._
+- Beers - _Cheers! Thanks for reading!_
