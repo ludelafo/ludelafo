@@ -30,11 +30,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Install required packages
+        run: |
+          apk add --no-cache ghostscript
+
       - name: Compile CV with Typst
         working-directory: cv
         run: |
-          typst compile main.typ cv.pdf
+          typst compile main.typ
 
+      - name: Optimize PDF
+        run: |
+          ps2pdf cv/main.pdf cv/cv.pdf
+          
       - name: Upload files
         uses: actions/upload-artifact@v4
         with:
@@ -94,7 +102,7 @@ jobs:
           mv hugo-files public
 
           # Move the CV file to the correct location
-          mv typst-files/cv.pdf public/about/cv/ludovic-delafontaine-cv.pdf
+          mv typst-files/cv.pdf public/cv.pdf
 
       - name: Upload files to GitHub Pages
         # Only run on main

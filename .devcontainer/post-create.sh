@@ -5,6 +5,7 @@ rootDir="$(pwd)"
 
 sudo apk add --no-cache \
   hugo \
+  ghostscript \
   nodejs \
   npm \
   typst

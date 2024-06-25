@@ -55,7 +55,7 @@ Federal VET Diploma in Computer Science with integrated Technical Professional M
 
 = Work experience
 
-*Artios -- A transparent Web development agency* #h(1fr) _December 2022 - Today_
+*Artios -- A transparent Web development agency* #h(1fr) _December 2022 - Present_
 #linebreak()
 Co-founder -- A company specialized in resilient, tailor made Web applications
 
@@ -117,7 +117,7 @@ Collection of interactive applications designed for festive and cultural events 
   - Git workflow and CI/CD (GitHub, GitLab)
 ]
 
-= Language skills and hobbies
+= Languages and hobbies
 
 #columns[
   French #h(1fr) _Mother tongue_

@@ -6,10 +6,12 @@
 		{{ end }}
 		{{ .Content }}
 	</div>
-	<div class="text-justify">
+	<div class="text-center">
 		{{ range .Pages }}
 			<p class="m-1">
-				<a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a> &ndash;
+				<a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+			</p>
+			<p class="m-1">
 				{{ .Summary }}
 			</p>
 		{{ else }}
