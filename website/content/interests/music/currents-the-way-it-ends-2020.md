@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Currents - The Way It Ends (2020)
 date: 2020-06-05
 artist: Currents

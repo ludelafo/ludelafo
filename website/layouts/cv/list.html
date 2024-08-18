@@ -1,0 +1,124 @@
+{{ define "main" }}
+	<article>
+		<header class="flex flex-col items-center text-center">
+			<img
+				class="!m-1 w-24 rounded-full p-1 ring-2 ring-gray-300"
+				src="/me.jpg"
+				alt="{{ .Site.Params.author.name }}'s picture"
+			/>
+
+			<h1 class="!m-1">{{ .Site.Params.author.name }}</h1>
+
+			<p class="!m-2 italic">
+				{{ .Params.Subtitle }}
+			</p>
+
+			<div class="flex flex-row flex-wrap justify-center">
+				<a href="{{ .Site.Params.author.github.url }}" class="mx-1">
+					{{ .Site.Params.author.github.name }}
+				</a>
+				·
+				<a href="{{ .Site.Params.author.gitlab.url }}" class="mx-1">
+					{{ .Site.Params.author.gitlab.name }}
+				</a>
+				·
+				<a href="mailto:{{ .Site.Params.author.email }}" class="mx-1">
+					{{ .Site.Params.author.email }}
+				</a>
+			</div>
+
+			<p class="!m-2">
+				Created: {{ .Date | time.Format "2006-01-02" }} · Updated:
+				{{ .GitInfo.CommitDate.Format "2006-01-02" }}
+			</p>
+		</header>
+
+		{{ with .Content }}
+			<hr class="!m-8 border-gray-300" />
+
+			<div>
+				{{ . }}
+			</div>
+		{{ end }}
+
+		{{ with .Site.GetPage "/cv/studies" }}
+			<h2>{{ .Title }}</h2>
+			{{ range .Pages.ByDate.Reverse }}
+				<h3>
+					{{ .Params.school }}
+				</h3>
+				<p class="italic">
+					{{ .Params.start }} &ndash;
+					{{ .Params.end }}
+				</p>
+				<p>{{ .Params.degree }}</p>
+				{{ .Content }}
+			{{ end }}
+		{{ end }}
+
+		{{ with .Site.GetPage "/cv/work-experience" }}
+			<h2>{{ .Title }}</h2>
+			{{ range .Pages.ByDate.Reverse }}
+				<h3>
+					{{ .Params.place }}
+				</h3>
+				<p class="italic">
+					{{ .Params.start }} &ndash;
+					{{ .Params.end }}
+				</p>
+				<p>{{ .Params.position }}</p>
+				{{ .Content }}
+			{{ end }}
+		{{ end }}
+
+		{{ with .Site.GetPage "/cv/projects" }}
+			<h2>{{ .Title }}</h2>
+			{{ range .Pages.ByDate.Reverse }}
+				<h3>
+					{{ .Title }} &ndash;
+					{{ .Params.subtitle }}
+				</h3>
+				<p class="italic">
+					{{ .Params.context }}
+				</p>
+				{{ .Content }}
+			{{ end }}
+		{{ end }}
+
+		{{ with .Site.GetPage "/cv/social-skills" }}
+			<h2>{{ .Title }}</h2>
+			{{ .Content }}
+		{{ end }}
+
+		{{ with .Site.GetPage "/cv/technical-skills" }}
+			<h2>{{ .Title }}</h2>
+			{{ .Content }}
+		{{ end }}
+
+		{{ with .Site.GetPage "/cv/languages" }}
+			<h2>{{ .Title }}</h2>
+			{{ .Content }}
+			<ul>
+				{{ range .Pages.ByWeight }}
+					<li>
+						{{ .Params.language }} &ndash;
+						<span class="italic">{{ .Params.level }}</span>
+					</li>
+				{{ end }}
+			</ul>
+		{{ end }}
+
+		{{ with .Site.GetPage "/cv/hobbies" }}
+			<h2>{{ .Title }}</h2>
+			{{ .Content }}
+			<ul>
+				{{ range .Pages.ByWeight }}
+					<li>
+						{{ .Title }} &ndash;
+						<span class="italic">{{ .Summary }}</span>
+					</li>
+				{{ end }}
+			</ul>
+		{{ end }}
+	</article>
+{{ end }}

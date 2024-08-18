@@ -12,24 +12,36 @@ module.exports = {
 			fontFamily: {
 				serif: ["EB Garamond", ...defaultTheme.fontFamily.serif],
 			},
-			typography: {
-				DEFAULT: {
-					css: {
-						h1: {
-							fontWeight: "400",
-						},
-						h2: {
-							fontWeight: "400",
-						},
-						h3: {
-							fontWeight: "400",
-						},
-						h4: {
-							fontWeight: "400",
-						},
-					},
-				},
-			},
+			// typography: {
+			// 	DEFAULT: {
+			// 		css: {
+			// 			h1: {
+			// 				fontWeight: "400",
+			// 				color: "#0c7489",
+			// 			},
+			// 			h2: {
+			// 				fontWeight: "400",
+			// 				color: "#0c7489",
+			// 				borderBottomWidth: "1px",
+			// 			},
+			// 			h3: {
+			// 				fontWeight: "400",
+			// 				color: "#0c7489",
+			// 			},
+			// 			h4: {
+			// 				fontWeight: "400",
+			// 				color: "#0c7489",
+			// 			},
+			// 			a: {
+			// 				color: "#576a73",
+			// 				"&:hover": {
+			// 					color: "#344045",
+			// 				},
+			// 			},
+			// 			li: {},
+			// 		},
+			// 	},
+			// },
 		},
 	},
 };

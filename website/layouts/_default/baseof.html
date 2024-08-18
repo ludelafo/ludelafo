@@ -6,31 +6,28 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="{{ .Summary }}" />
 		<title>
 			{{ if .IsHome }}
 				{{ site.Title }}
 			{{ else }}
-				{{ printf "%s | %s" .Title site.Title }}
+				{{ printf "%s · %s" .Title site.Title }}
 			{{ end }}
 		</title>
 		{{ partial "head/css.html" . }}
 		{{ partial "head/js.html" . }}
 	</head>
 	<body
-		class="{{ if not .IsHome }}
-			pb-8
-		{{ end }} flex min-h-screen flex-col bg-gray-50 font-serif text-slate-900"
+		class="flex min-h-screen flex-col bg-gray-50 text-justify font-serif text-slate-900"
 	>
 		{{ block "body" . }}
-			{{ if not .IsHome }}
-				{{ partial "header.html" . }}
-			{{ end }}
-			<main class="container prose grow px-6">
+			{{ partial "header.html" . }}
+			<main
+				class="container prose grow px-6 py-16 md:prose-lg prose-headings:text-left prose-headings:font-normal prose-headings:text-sky-800 prose-h2:mx-8 prose-h2:mt-8 prose-h2:border-b prose-h2:border-gray-300 prose-h2:text-center prose-p:my-3 prose-a:text-sky-600 prose-a:underline prose-ul:m-0 prose-li:m-0"
+			>
 				{{ block "main" . }}{{ end }}
 			</main>
-			{{ if not .IsHome }}
-				{{ partial "footer.html" . }}
-			{{ end }}
+			{{ partial "footer.html" . }}
 		{{ end }}
 	</body>
 	<div class="bg-noise animate-noise h-full w-full"></div>

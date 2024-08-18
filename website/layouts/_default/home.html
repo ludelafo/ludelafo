@@ -1,25 +1,166 @@
 {{ define "main" }}
-	<div
-		class="flex min-h-screen flex-col items-center justify-center text-center"
-	>
-		<div>
+	<article>
+		<header class="flex flex-col items-center text-center">
 			<img
-				class="m-1 w-24 rounded-full p-1 ring-2 ring-gray-300"
+				class="!m-1 w-24 rounded-full p-1 ring-2 ring-gray-300"
 				src="/me.jpg"
-				alt="Ludovic Delafontaine's picture"
+				alt="{{ .Site.Params.author.name }}'s picture"
 			/>
-		</div>
-		<div>
-			<h1 class="m-1">{{ .Title }}</h1>
-			{{ .Content }}
-		</div>
-		<div>
-			{{ range $index, $value := site.Menus.main }}
-				{{ if $index }}·{{ end }}
-				<a href="{{ .URL }}" class="no-underline">
-					{{ .Name }}
+
+			<h1 class="!m-1">{{ .Site.Params.author.name }}</h1>
+
+			<p class="!m-2 italic">
+				{{ .Summary }}
+			</p>
+
+			<div class="flex flex-row flex-wrap justify-center">
+				<a href="{{ .Site.Params.author.github.url }}" class="mx-1">
+					{{ .Site.Params.author.github.name }}
 				</a>
+				·
+				<a href="{{ .Site.Params.author.gitlab.url }}" class="mx-1">
+					{{ .Site.Params.author.gitlab.name }}
+				</a>
+				·
+				<a href="mailto:{{ .Site.Params.author.email }}" class="mx-1">
+					{{ .Site.Params.author.email }}
+				</a>
+			</div>
+
+			<p class="!m-2">
+				Created: {{ .Date | time.Format "2006-01-02" }} · Updated:
+				{{ .GitInfo.CommitDate.Format "2006-01-02" }}
+			</p>
+		</header>
+
+		{{ with .Content }}
+			<hr class="!m-8 border-gray-300" />
+
+			<div>
+				{{ . }}
+			</div>
+		{{ end }}
+
+		{{ with .Site.GetPage "/misc/blog" }}
+			<h2>{{ .Title }}</h2>
+			{{ .Content }}
+			<ul>
+				{{ range shuffle .Pages | first 3 }}
+					<li>
+						<a href="{{ .RelPermalink }}">
+							{{ .Title }} &ndash;
+							{{ .Summary }}
+						</a>
+					</li>
+				{{ else }}
+					<li class="italic">No posts yet</li>
+				{{ end }}
+			</ul>
+			{{ if .Pages }}
+				<p>
+					<a href="{{ .RelPermalink }}">Check out all posts</a>
+				</p>
 			{{ end }}
-		</div>
-	</div>
+		{{ end }}
+
+		{{ with .Site.GetPage "/cv" }}
+			<h2>{{ .Title }}</h2>
+			{{ .Content }}
+			<ul>
+				<li>
+					<a href="{{ .RelPermalink }}">Web version</a>
+				</li>
+				<li>
+					<a href="/cv.pdf">PDF version</a>
+				</li>
+			</ul>
+		{{ end }}
+
+		{{ with .Site.GetPage "/hobbies" }}
+			<h2>{{ .Title }}</h2>
+			{{ .Content }}
+			<ul>
+				{{ range .Pages.ByTitle }}
+					<li>
+						<a href="{{ .RelPermalink }}">
+							{{ .Title }} &ndash;
+							{{ .Summary }}
+						</a>
+					</li>
+				{{ else }}
+					<li class="italic">No hobbies yet</li>
+				{{ end }}
+			</ul>
+			{{ if .Pages }}
+				<p>
+					<a href="{{ .RelPermalink }}">Check out all hobbies</a>
+				</p>
+			{{ end }}
+		{{ end }}
+
+		{{ with .Site.GetPage "/interests" }}
+			<h2>{{ .Title }}</h2>
+			{{ .Content }}
+			<ul>
+				{{ range .RegularPagesRecursive.ByDate.Reverse | first 3 }}
+					<li>
+						<a href="{{ .RelPermalink }}">
+							{{ .Title }}
+						</a>
+					</li>
+				{{ else }}
+					<li class="italic">No interests yet</li>
+				{{ end }}
+			</ul>
+			{{ if .RegularPagesRecursive }}
+				<p>
+					<a href="{{ .RelPermalink }}">Check out all interests</a>
+				</p>
+			{{ end }}
+		{{ end }}
+
+		{{ with .Site.GetPage "/misc" }}
+			<h2>{{ .Title }}</h2>
+			{{ with .Site.GetPage "/misc/tools-and-links" }}
+				{{ .Content }}
+				<ul>
+					{{ range shuffle .Pages | first 3 }}
+						<li>
+							<a href="{{ .RelPermalink }}">
+								{{ .Title }} &ndash;
+								{{ .Summary }}
+							</a>
+						</li>
+					{{ else }}
+						<li class="italic">No tools or links yet</li>
+					{{ end }}
+				</ul>
+				{{ if .Pages }}
+					<p>
+						<a href="{{ .RelPermalink }}">Check out all tools and links</a>
+					</p>
+				{{ end }}
+			{{ end }}
+			{{ with .Site.GetPage "/misc/quotes-and-words" }}
+				{{ .Content }}
+				<ul>
+					{{ range shuffle .Pages | first 3 }}
+						<li>
+							<a href="{{ .RelPermalink }}">
+								{{ .Title }} &ndash;
+								{{ .Summary }}
+							</a>
+						</li>
+					{{ else }}
+						<li class="italic">No quotes or words yet</li>
+					{{ end }}
+				</ul>
+				{{ if .Pages }}
+					<p>
+						<a href="{{ .RelPermalink }}">Check out all quotes and words</a>
+					</p>
+				{{ end }}
+			{{ end }}
+		{{ end }}
+	</article>
 {{ end }}

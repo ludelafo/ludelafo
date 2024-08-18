@@ -42,7 +42,7 @@ jobs:
       - name: Optimize PDF
         run: |
           ps2pdf cv/main.pdf cv/cv.pdf
-          
+
       - name: Upload files
         uses: actions/upload-artifact@v4
         with:
@@ -88,6 +88,7 @@ jobs:
           retention-days: 1
 
   merge-files-for-github-pages:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     needs: [build-cv, build-website]
     steps:

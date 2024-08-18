@@ -8,6 +8,7 @@ sudo apk add --no-cache \
   ghostscript \
   nodejs \
   npm \
+  optipng \
   typst
 
 ## Website

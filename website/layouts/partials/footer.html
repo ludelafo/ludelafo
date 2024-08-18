@@ -1,1 +1,25 @@
-<footer class="z-50"></footer>
+<footer
+	class="z-50 mx-4 flex h-10 items-center justify-between gap-x-3 border-t border-gray-300 font-mono text-xs"
+>
+	<div>
+		{{ if .File }}
+			<a
+				href="{{ .Site.Params.git.websiteUrl }}/content/{{ .File.Path }}"
+				target="_blank"
+				class="mx-1 underline"
+			>
+				Source
+			</a>
+		{{ end }}
+	</div>
+	<div>
+		<a
+			href="{{ .Site.Params.license.url }}"
+			target="_blank"
+			rel="license"
+			class="mx-1 underline"
+		>
+			{{ .Site.Params.license.name }}
+		</a>
+	</div>
+</footer>

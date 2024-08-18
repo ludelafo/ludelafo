@@ -1,23 +1,29 @@
 {{ define "main" }}
-	<div class="mt-16 text-center">
-		<h1>{{ .Title }}</h1>
-		{{ with .Summary }}
-			<p>{{ . }}</p>
-		{{ end }}
-		{{ .Content }}
-	</div>
-	<div class="text-center">
-		{{ range .Pages }}
-			<p class="m-1">
-				<a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-			</p>
-			<p class="m-1">
-				{{ .Summary }}
-			</p>
+
+	{{/*  <div
+		class="flex min-h-screen flex-col items-center justify-center text-center"
+	>
+		<div>
+			<h1 class="m-1">{{ .Title }}</h1>
+			{{ with .Summary }}
+				<p>{{ . }}</p>
+			{{ end }}
+			{{ .Content }}
+		</div>
+		{{ if .Pages }}
+			<div>
+				{{ range $index, $value := .Pages }}
+					{{ if $index }}·{{ end }}
+					<a href="{{ .RelPermalink }}" class="no-underline">
+						{{- .Name -}}
+					</a>
+				{{ end }}
+			</div>
 		{{ else }}
-			<p class="text-center italic">
+			<div class="italic">
 				No content found in this section (yet). Please check back later!
-			</p>
+			</div>
 		{{ end }}
-	</div>
+	</div>  */}}
+	allo
 {{ end }}

@@ -5,30 +5,21 @@
 @tailwind utilities;
 
 .bg-noise {
+	animation: bg-noise 1s steps(10) infinite;
+	background-image: url(/images/bg-noise.png);
+	width: 300vw;
+	height: 300vh;
+	left: -100vw;
 	position: fixed;
 	z-index: -99999;
-	width: 100vw;
-	height: 100vh;
-}
-
-.bg-noise:before {
-	content: "";
-	position: absolute;
-	animation: bg-noise 1s steps(8) both infinite;
-	background-image: url(/svg/bg-noise.svg);
-	background-size: contain;
-	width: 120vw;
-	height: 100vh;
-	left: -10vw;
-	opacity: 0.9;
 }
 
 @keyframes bg-noise {
 	from {
-		transform: translate(-10vw, 0px);
+		transform: translate(-10%, 0px);
 	}
 
 	to {
-		transform: translate(10vw, 0px);
+		transform: translate(10%, 0px);
 	}
 }

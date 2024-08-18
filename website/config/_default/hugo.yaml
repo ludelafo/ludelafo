@@ -5,6 +5,26 @@ enableEmoji: true
 sectionPagesMenu: main
 enableGitInfo: true
 
+params:
+  license:
+    name: CC BY-SA 4.0
+    url: https://github.com/ludelafo/ludelafo/blob/main/LICENSE.md
+
+  git:
+    repositoryUrl: https://github.com/ludelafo/ludelafo
+    websiteUrl: https://github.com/ludelafo/ludelafo/tree/main/website
+    cvUrl: https://github.com/ludelafo/ludelafo/tree/main/cv
+
+  author:
+    name: Ludovic Delafontaine
+    email: contact@ludelafo.ch
+    github:
+      name: github.com/ludelafo
+      url: https://github.com/ludelafo
+    gitlab:
+      name: gitlab.com/ludelafo
+      url: https://gitlab.com/ludelafo
+
 taxonomies:
   ## Generic
   tag: tags
